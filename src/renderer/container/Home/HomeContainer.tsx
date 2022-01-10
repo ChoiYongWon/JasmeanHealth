@@ -13,8 +13,11 @@ const HomeContainer = () => {
   const onRecordClick = () => {
     setRecording(true)
     setTimeout(()=>{
-      navigate("/record")
+      setRecording(true)
     }, 5000)
+    setTimeout(()=>{
+      navigate("/record")
+    }, 10000)
     //
   }
 

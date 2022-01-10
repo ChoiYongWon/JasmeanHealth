@@ -26,10 +26,10 @@ const HomeTemplate = (props: Props) => {
           <Icon onClick={props.onQRClick} src={qr}/>
           <IconTitle style={{marginTop: "7px"}}>QR 코드</IconTitle>
         </IconWrapper>
-        <IconWrapper>
+        {/* <IconWrapper>
           <Icon onClick={props.onUserClick} src={user}/>
           <IconTitle style={{marginTop: "7px"}}>정보 수정</IconTitle>
-        </IconWrapper>
+        </IconWrapper> */}
       </MenuWrapper>
     </Wrapper>
   )

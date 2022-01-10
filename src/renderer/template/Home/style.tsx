@@ -72,7 +72,7 @@ export const RecordTitle = styled.span`
 
 export const MenuWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
   padding: 0 40px;
   box-sizing: border-box;
