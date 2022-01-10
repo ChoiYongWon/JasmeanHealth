@@ -5,12 +5,12 @@ import {useEffect, useState} from "react"
 const QRConfirmContainer = () => {
 
   const navigate = useNavigate()
-  const [hospital, setHospital] = useState("")
+  // const [hospital, setHospital] = useState("")
 
   //개발자용
-  useEffect(()=>{
-    setHospital("한마음 병원")
-  }, [])
+  // useEffect(()=>{
+  //   setHospital("한마음 병원")
+  // }, [])
 
 
   const onOkClick = () => {
@@ -23,7 +23,7 @@ const QRConfirmContainer = () => {
 
   return (
     <QRConfirmTemplate
-      hospital={hospital}
+      // hospital={hospital}
       onOkClick={onOkClick}
       onCancelClick={onCancelClick}
     />

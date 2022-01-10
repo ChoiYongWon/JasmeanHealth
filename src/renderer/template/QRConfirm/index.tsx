@@ -5,7 +5,7 @@ import {Wrapper, SecurityIcon, TipMessage, HospitalMessage} from "./style"
 
 
 type Props = {
-  hospital: string
+  // hospital: string
   onOkClick: ()=>void
   onCancelClick: ()=>void
 }
@@ -15,7 +15,7 @@ const QRConfirmTemplate = (props: Props) => {
   return (
     <Wrapper>
       <SecurityIcon onClick={()=>{}} src={security} alt={"icon"}/>
-      <HospitalMessage  style={{marginTop: "97px"}}>{props.hospital}</HospitalMessage>
+      {/* <HospitalMessage  style={{marginTop: "97px"}}>{props.hospital}</HospitalMessage> */}
       <TipMessage  style={{marginTop: "35px"}}>
         블록체인 기반의 보안을 활용하여 안전하게 병원에 정보를 전달합니다.<br></br>
         정보이용에 동의하십니까?

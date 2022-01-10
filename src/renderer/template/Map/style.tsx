@@ -22,3 +22,29 @@ export const HeaderMessage = styled.span`
 export const Decorate = styled(HeaderMessage)`
   color: #699BF7;
 `
+
+export const IframeWrapper = styled.div`
+  width: 100%;
+  height: 420px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+
+`
+
+export const MapWrapper = styled.div`
+  position: absolute;
+  width: 100%;
+  height: calc(100% + 100px);
+  top: -100px;
+  overflow: hidden;
+
+`
+
+export const MapComponent = styled.iframe`
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border: none;
+`

@@ -1,32 +1,36 @@
 import {useRef} from "react"
-import { useSetRecoilState } from "recoil"
-import { Auth_Status, User_Info } from "renderer/recoil"
 import AuthTemplate from "renderer/template/Auth"
-import {AUTH} from "../../type/index"
+import {useNavigate} from "react-router-dom"
+import { UserTemp_Info } from "renderer/recoil"
+import {useRecoilState} from "recoil"
 
 
 
 const AuthContainer = () => {
 
-  const idRef = useRef(null)
-  const pwRef = useRef(null)
-  const setAuthStatus = useSetRecoilState(Auth_Status)
-  const setUserInfo = useSetRecoilState(User_Info)
+  const nameRef = useRef<any>(null)
+  const genderRef = useRef<any>(null)
+  const birthRef = useRef<any>(null)
+  const navigate = useNavigate()
+  const [userTempInfo, setUserTempInfo] = useRecoilState(UserTemp_Info)
 
   const onLoginClick = () => {
     //개발자용
-    setAuthStatus(AUTH.USER)
-    setUserInfo({
-      id: "yongwon0824",
-      name: "최용원",
-      birth: "2001-08-24"
-    })
+    // console.log(nameRef)
+
+    const name = nameRef.current.value
+    const gender = genderRef.current.value
+    const birth = birthRef.current.value
+    setUserTempInfo({ name, gender, birth })
+    navigate("/verify")
   }
 
   return (
     <AuthTemplate
-      idRef={idRef}
-      pwRef={pwRef}
+      nameRef={nameRef}
+      genderRef={genderRef}
+      birthRef={birthRef}
+
       onLoginClick={onLoginClick}
     />
   )

@@ -11,9 +11,12 @@ export const Wrapper = styled.div`
   height: 48px;
 `
 
-export const Component = styled.button`
+export const Component = styled.div`
   width: 100%;
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: ${(props:ComponentProps)=>props.types==BUTTON.OUTLINE ? '#ffffff' : '#4285f4'};
   color: ${(props:ComponentProps)=>props.types==BUTTON.OUTLINE ? '#4285f4' : '#ffffff'};
   border: 2px solid #4285f4;

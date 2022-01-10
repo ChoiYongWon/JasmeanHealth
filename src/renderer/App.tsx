@@ -1,6 +1,8 @@
 import Routers from "./router/index"
 import {createGlobalStyle} from "styled-components"
 import normalize from "styled-normalize"
+import { useEffect, useState } from "react"
+import Splash from "./splash/index"
 
 export default function App() {
 
@@ -18,10 +20,22 @@ export default function App() {
 
   `
 
+  const [splash, setSplash] = useState(true)
+
+  useEffect(()=>{
+    if(splash){
+      setTimeout(()=>{
+        setSplash(false)
+      }, 6000)
+    }
+  }, [splash])
+
   return (
     <>
       <GlobalStyle/>
-      <Routers/>
+      {
+      splash ? <Splash/> : <Routers/>
+      }
     </>
   );
 }

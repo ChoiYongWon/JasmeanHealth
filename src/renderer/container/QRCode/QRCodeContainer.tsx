@@ -1,16 +1,14 @@
 import QRCodeTemplate from "renderer/template/QRCode"
 import {useNavigate} from "react-router-dom"
-import {useEffect, useState} from "react"
+import { useRecoilValue } from "recoil"
+import { User_Info } from "renderer/recoil"
 
 const QRCodeContainer = () => {
 
   const navigate = useNavigate()
-  const [hospital, setHospital] = useState("")
+  const userInfo = useRecoilValue(User_Info)
 
   //개발자용
-  useEffect(()=>{
-    setHospital("한마음 병원")
-  }, [])
 
 
   const onOkClick = () => {
@@ -23,7 +21,8 @@ const QRCodeContainer = () => {
 
   return (
     <QRCodeTemplate
-      hospital={hospital}
+      // hospital={hospital}
+      qrInfo={userInfo}
       onOkClick={onOkClick}
       onCancelClick={onCancelClick}
     />

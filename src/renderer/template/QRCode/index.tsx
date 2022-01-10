@@ -1,11 +1,13 @@
 import qr from '../../../../assets/qr2.svg'
 import Button from "../../component/Button"
 import {BUTTON} from "../../type/index"
-import {Wrapper, QRIcon, TipMessage, HospitalMessage} from "./style"
+import {Wrapper, QRWrapper, TipMessage, HospitalMessage} from "./style"
+import QRCode from "react-qr-code"
 
 
 type Props = {
-  hospital: string
+  // hospital: string
+  qrInfo: any
   onOkClick: ()=>void
   onCancelClick: ()=>void
 }
@@ -14,9 +16,13 @@ const QRCodeTemplate = (props: Props) => {
 
   return (
     <Wrapper>
-      <QRIcon onClick={()=>{}} src={qr} alt={"icon"}/>
-      <HospitalMessage  style={{marginTop: "97px"}}>{props.hospital}</HospitalMessage>
-      <TipMessage  style={{marginTop: "35px"}}>
+      {/* <QRIcon onClick={()=>{}} src={qr} alt={"icon"}/> */}
+      <QRWrapper >
+        <QRCode value={props.qrInfo} size={120}/>
+
+      </QRWrapper>
+      {/* <HospitalMessage  style={{marginTop: "97px"}}>{props.hospital}</HospitalMessage> */}
+      <TipMessage  style={{marginTop: "97px"}}>
         QR 코드를 제시해 빠른 접수를 이용해보세요
       </TipMessage>
 

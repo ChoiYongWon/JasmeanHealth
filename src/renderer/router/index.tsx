@@ -1,7 +1,7 @@
 import {HashRouter as Router} from "react-router-dom"
 import HomeRouter from "./Home"
 import {AUTH} from "../type/index"
-import RegisterRouter from "./Register"
+import VerifyRouter from "./Verify"
 import InfoRouter from "./Info"
 import RecordRouter from "./Record"
 import RecommendRouter from "./Recommend"
@@ -20,7 +20,7 @@ const Routers = () => {
         <RecommendRouter security={[AUTH.USER]}/>
         <RecordRouter security={[AUTH.USER]}/>
         <InfoRouter security={[AUTH.USER]}/>
-        <RegisterRouter security={[AUTH.GUEST]}/>
+        <VerifyRouter security={[AUTH.GUEST]}/>
         <HomeRouter security={[AUTH.USER]}/>
     </Router>
   )

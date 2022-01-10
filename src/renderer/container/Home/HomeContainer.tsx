@@ -2,14 +2,20 @@ import { useRecoilValue } from "recoil"
 import { User_Info } from "renderer/recoil"
 import HomeTemplate from "renderer/template/Home"
 import {useNavigate} from "react-router-dom"
+import {useState} from "react"
 
 const HomeContainer = () => {
 
   const { name } = useRecoilValue(User_Info)
+  const [recording, setRecording] = useState(false)
   const navigate = useNavigate()
 
   const onRecordClick = () => {
-    navigate("/record")
+    setRecording(true)
+    setTimeout(()=>{
+      navigate("/record")
+    }, 5000)
+    //
   }
 
   const onQRClick = () => {
@@ -23,6 +29,7 @@ const HomeContainer = () => {
   return (
     <HomeTemplate
       name={name}
+      recording={recording}
       onRecordClick={onRecordClick}
       onQRClick={onQRClick}
       onUserClick={onUserClick}

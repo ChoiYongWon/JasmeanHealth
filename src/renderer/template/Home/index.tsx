@@ -9,6 +9,7 @@ type Props = {
   onRecordClick: ()=>void
   onQRClick: ()=>void
   onUserClick: ()=>void
+  recording: boolean
 }
 
 const HomeTemplate = (props: Props) => {
@@ -18,7 +19,7 @@ const HomeTemplate = (props: Props) => {
       <HeaderMessage>{props.name}님,</HeaderMessage>
       <HeaderMessage>어디가 불편하신가요?</HeaderMessage>
       <RecordDescription style={{marginTop: "132px"}}>눌러서 말씀해보세요!</RecordDescription>
-      <RecordButton onClick={props.onRecordClick} src={record} alt={"icon"} style={{marginTop: "27px"}}/>
+      <RecordButton recording={props.recording} onClick={props.onRecordClick} src={record} alt={"icon"} style={{marginTop: "27px"}}/>
       <RecordTitle style={{marginTop:"27px"}}>원클릭 예약 시스템</RecordTitle>
       <MenuWrapper style={{marginTop: "142px"}}>
         <IconWrapper>

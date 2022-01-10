@@ -4,24 +4,24 @@ import AuthPage from "../page/Auth"
 import {useRecoilValue} from "recoil"
 import {Auth_Status} from "../recoil/index"
 import {AUTH} from "../type/index"
-import RegisterPage from "../page/Register"
-import Page403 from "renderer/page/Error/403"
+import VerifyPage from "../page/Verify"
+import HomePage from "renderer/page/Home"
 
 
 type Props = {
   security: AUTH[]
 }
 
-const RegisterRouter = (props: Props) => {
+const VerifyRouter = (props: Props) => {
 
   const role = useRecoilValue(Auth_Status)
 
   return (
     <Routes>
-      <Route path="/register" element={props.security.includes(role) ? <RegisterPage/> : <Page403/>}></Route>
+      <Route path="/verify" element={props.security.includes(role) ? <VerifyPage/> : <HomePage/>}></Route>
 
     </Routes>
   )
 }
 
-export default RegisterRouter
+export default VerifyRouter

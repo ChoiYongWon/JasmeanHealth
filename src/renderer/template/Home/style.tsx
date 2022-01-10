@@ -1,4 +1,16 @@
-import styled from "styled-components"
+import styled, { keyframes, css } from "styled-components"
+
+const recording = keyframes`
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+`
 
 
 export const Wrapper = styled.div`
@@ -27,6 +39,10 @@ export const RecordDescription = styled.span`
   text-align:center;
 `
 
+type RecordProps = {
+  recording: boolean
+}
+
 export const RecordButton = styled.img`
   width: 106px;
   height: 106px;
@@ -34,6 +50,10 @@ export const RecordButton = styled.img`
   margin: 0 auto;
   cursor: pointer;
   transition: transform .2s ease;
+  ${(props: RecordProps) => props.recording &&css`
+   animation: ${recording} 1.5s 1s infinite linear alternate;
+  `}
+
 
   &:hover{
     transform: scale(1.05);

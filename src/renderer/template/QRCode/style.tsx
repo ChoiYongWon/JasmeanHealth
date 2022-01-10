@@ -11,6 +11,12 @@ export const Wrapper = styled.div`
   box-sizing: border-box;
 `
 
+export const QRWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`
+
 export const TipMessage = styled.span`
   font-size: 18px;
   line-height: 20px;

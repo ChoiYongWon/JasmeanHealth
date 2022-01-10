@@ -9,8 +9,19 @@ export const Auth_Status = atom<AUTH>({
 export const User_Info = atom<any>({
   key: "user_info",
   default: {
-    id: null,
     name: null,
-    birth: null
+    birth: null,
+    gender: null,
+    phone: null
+  }
+})
+
+export const UserTemp_Info = atom<any>({
+  key: "usertemp_info",
+  default: {
+    name: null,
+    birth: null,
+    gender: null,
+    phone: null
   }
 })
